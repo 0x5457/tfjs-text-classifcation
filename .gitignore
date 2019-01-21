@@ -1,0 +1,15 @@
+.idea
+.vscode
+# macOS
+.DS_Store
+/dist
+
+# dependencies
+/node_modules
+
+# misc
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.cache
+
