@@ -14,7 +14,7 @@ const dataDistPath = path.join(distPath, "data");
 // Bundler 选项
 const options = {
   outFile: "index.html", // 输出文件的名称
-  publicUrl: './'
+  publicUrl: process.env.NODE_ENV !== "production" ? '/' : './'
 };
 
 // 使用提供的入口文件路径和选项初始化 bundler
