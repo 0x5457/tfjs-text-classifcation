@@ -12,12 +12,21 @@ function createConvModel() {
     tf.layers.conv1d({
       inputShape: [1, w2cndim],
       kernelSize: 1,
-      filters: 32,
+      filters: 16,
       activation: "relu"
     })
   );
   model.add(tf.layers.dense({ units: 32, activation: "relu" }));
-  model.add(tf.layers.dense({ units: 16, activation: "relu" }));
+  model.add(
+    tf.layers.conv1d({
+      inputShape: [1, w2cndim],
+      kernelSize: 1,
+      filters: 64,
+      activation: "relu"
+    })
+  );
+  model.add(tf.layers.dense({ units: 128, activation: "relu" }));
+  model.add(tf.layers.dense({ units: 512, activation: "relu" }));
   model.add(tf.layers.dense({ units: 1, activation: "sigmoid" }));
   model.summary();
 
